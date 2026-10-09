@@ -1,0 +1,47 @@
+{
+  "id": "DATA-002",
+  "category": "data",
+  "difficulty": "complex",
+  "kind": "standard",
+  "prompt": "Generate a synthetic dataset of 1,000 orders (seed 42) with order_date, amount and status, then report the monthly revenue for paid orders and plot it.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Dataset is reproducible from the seed",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Monthly totals computed only from status=paid",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Chart file produced and opened/checked",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Report states the assumptions on distributions",
+      "essential": false
+    }
+  ],
+  "evaluation": {
+    "method": "hybrid"
+  },
+  "expected_evidence": [
+    "script",
+    "re-run giving identical totals",
+    "chart file"
+  ],
+  "failure_conditions": [
+    "Non-reproducible data",
+    "Chart never produced"
+  ],
+  "resources": [
+    "files",
+    "shell",
+    "python"
+  ],
+  "expected_status": "VERIFIED"
+}

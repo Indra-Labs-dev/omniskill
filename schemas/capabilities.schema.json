@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:omniskill:schema:capabilities:v1",
+  "title": "OMNISKILL local capability snapshot",
+  "type": "object",
+  "required": ["generated_at", "platform", "runtimes", "tools", "project"],
+  "properties": {
+    "generated_at": {"type": "string"},
+    "platform": {"type": "object"},
+    "runtimes": {"type": "object", "additionalProperties": {"type": ["string", "null"]}},
+    "tools": {"type": "object", "additionalProperties": {"type": ["string", "null"]}},
+    "project": {"type": "object"},
+    "not_detectable": {"type": "array", "items": {"type": "string"}}
+  }
+}

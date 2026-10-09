@@ -1,0 +1,39 @@
+{
+  "id": "RES-002",
+  "category": "research",
+  "difficulty": "complex",
+  "kind": "verification_heavy",
+  "prompt": "What is the current latest stable Python release? Give the version and its release date, with a source.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Checks a live source (python.org) rather than answering from memory",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Version and date match the source on the day of the run",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Cites the source URL",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "hybrid",
+    "notes": "Grader checks python.org on the run date."
+  },
+  "expected_evidence": [
+    "source URL and access date"
+  ],
+  "failure_conditions": [
+    "Answers from memory without saying so",
+    "No source"
+  ],
+  "resources": [
+    "web"
+  ],
+  "expected_status": "VERIFIED"
+}

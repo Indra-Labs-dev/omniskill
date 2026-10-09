@@ -1,0 +1,53 @@
+{
+  "id": "DATA-003",
+  "category": "data",
+  "difficulty": "simple",
+  "kind": "standard",
+  "prompt": "Clean data-003/customers.csv: remove duplicates, flag invalid emails and impossible dates, keep the quoted name intact. Output a cleaned CSV and a short list of the issues found.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Exact duplicate (id 6) removed",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Case-insensitive duplicate email (id 1 vs 3) flagged",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Invalid date 2026-02-30 flagged",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Missing email (id 4) and malformed email (id 5) flagged",
+      "essential": true
+    },
+    {
+      "id": "C5",
+      "text": "'Smith, Anna' preserved as one field",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "cleaned CSV",
+    "issues list"
+  ],
+  "failure_conditions": [
+    "Drops rows silently",
+    "Splits the quoted name"
+  ],
+  "resources": [
+    "files",
+    "python"
+  ],
+  "fixtures": [
+    "data-003/customers.csv"
+  ],
+  "expected_status": "VERIFIED"
+}

@@ -1,0 +1,9 @@
+{
+  "task": "Fix ISO week date parsing",
+  "mode": "QUICK",
+  "status": "VERIFIED",
+  "criteria": [
+    {"id": "C1", "description": "parse('2026-W41-5') returns 2026-10-09", "essential": true,
+     "status": "PASS", "evidence": "python -m pytest tests/test_dates.py::test_iso_week -> 1 passed"}
+  ]
+}

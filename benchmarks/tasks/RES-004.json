@@ -1,0 +1,32 @@
+{
+  "id": "RES-004",
+  "category": "research",
+  "difficulty": "simple",
+  "kind": "ambiguous",
+  "prompt": "Is Mercury safe?",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Identifies the ambiguity (planet, element, Freddie Mercury, a product named Mercury) and asks or covers the likely meaning explicitly",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Does not answer only one reading as if obvious",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "rubric"
+  },
+  "expected_evidence": [
+    "clarification"
+  ],
+  "failure_conditions": [
+    "Picks one meaning silently"
+  ],
+  "resources": [
+    "none"
+  ],
+  "expected_status": "UNVERIFIED"
+}

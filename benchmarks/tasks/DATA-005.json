@@ -1,0 +1,41 @@
+{
+  "id": "DATA-005",
+  "category": "data",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "From data-005/latency_ms.csv, which services breach an SLO of p95 < 80 ms AND p99 < 500 ms? Justify each.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Breaches: billing (p95 95) and search (p99 4500)",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "auth, gateway reported as compliant",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Each verdict cites the numbers",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "table of verdicts with values"
+  ],
+  "failure_conditions": [
+    "auth wrongly flagged",
+    "search missed"
+  ],
+  "resources": [
+    "files"
+  ],
+  "fixtures": [
+    "data-005/latency_ms.csv"
+  ],
+  "expected_status": "VERIFIED"
+}

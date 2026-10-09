@@ -1,0 +1,41 @@
+{
+  "id": "DEV-002",
+  "category": "dev",
+  "difficulty": "complex",
+  "kind": "standard",
+  "prompt": "Write a Python function parse_duration(s) that accepts strings like '1h30m', '45s', '2h', '90m15s' and returns seconds as int; raise ValueError on invalid input. Provide unit tests covering valid, edge and invalid cases.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Correct results on a hidden set of 20 valid inputs",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Raises ValueError on a hidden set of 10 invalid inputs",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Ships its own tests, which pass",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "test run output",
+    "list of cases covered"
+  ],
+  "failure_conditions": [
+    "Silently returns 0 for invalid input",
+    "No tests delivered"
+  ],
+  "resources": [
+    "files",
+    "shell",
+    "python"
+  ],
+  "expected_status": "VERIFIED"
+}

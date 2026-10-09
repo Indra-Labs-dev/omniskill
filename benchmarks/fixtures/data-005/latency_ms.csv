@@ -1,0 +1,5 @@
+service,p50,p95,p99
+auth,12,48,210
+billing,30,95,180
+search,22,70,4500
+gateway,8,25,60

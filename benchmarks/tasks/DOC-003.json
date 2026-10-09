@@ -1,0 +1,44 @@
+{
+  "id": "DOC-003",
+  "category": "docs",
+  "difficulty": "complex",
+  "kind": "standard",
+  "prompt": "Write a runbook for rotating a leaked API key in a web service (detection to post-incident), as a document with numbered steps, roles and a verification step after each critical action.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Covers revoke, rotate, redeploy, verify, audit logs, post-mortem",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Each critical step has a verification check",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Roles named for each step",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "No real-looking secrets in examples",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "rubric"
+  },
+  "expected_evidence": [
+    "the runbook",
+    "section checklist"
+  ],
+  "failure_conditions": [
+    "Rotation before revocation scope check is missing",
+    "Contains realistic key strings"
+  ],
+  "resources": [
+    "files"
+  ],
+  "expected_status": "VERIFIED"
+}

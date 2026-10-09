@@ -1,0 +1,9 @@
+id,name,email,signup_date,country
+1,Awa Koné,awa.kone@example.com,2026-01-14,CI
+2,Jean Dupont,jean.dupont@example.com,2026-02-30,FR
+3,Awa Koné,AWA.KONE@example.com,2026-01-14,CI
+4,Moussa Traoré,,2026-03-02,ML
+5,Li Wei,li.wei@example,2026-03-10,CN
+6,Fatou Diallo,fatou.diallo@example.com,2026-03-11,SN
+6,Fatou Diallo,fatou.diallo@example.com,2026-03-11,SN
+7,"Smith, Anna",anna.smith@example.com,2026-04-01,GB

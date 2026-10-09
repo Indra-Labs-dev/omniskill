@@ -1,0 +1,44 @@
+{
+  "id": "DOC-001",
+  "category": "docs",
+  "difficulty": "simple",
+  "kind": "standard",
+  "prompt": "Write a 150–200 word announcement that MFA becomes mandatory for all admin accounts on 2026-11-01, for non-technical staff.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Length 150–200 words (counted)",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "States the date and who is affected",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Says what to do and where to get help",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Plain language, no jargon",
+      "essential": false
+    }
+  ],
+  "evaluation": {
+    "method": "hybrid"
+  },
+  "expected_evidence": [
+    "word count",
+    "the text"
+  ],
+  "failure_conditions": [
+    "Wrong date",
+    "Over 250 words"
+  ],
+  "resources": [
+    "none"
+  ],
+  "expected_status": "VERIFIED"
+}

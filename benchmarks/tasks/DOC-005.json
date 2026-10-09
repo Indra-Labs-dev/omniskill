@@ -1,0 +1,40 @@
+{
+  "id": "DOC-005",
+  "category": "docs",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "Produce a Markdown table comparing TCP and UDP on: connection, reliability, ordering, header size, typical uses. Then convert it to an HTML file.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Facts correct (TCP header 20–60 bytes, UDP 8 bytes)",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "HTML file produced and its table has 5 data rows",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Opened or parsed the HTML to check",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "HTML file",
+    "parse check output"
+  ],
+  "failure_conditions": [
+    "Wrong header sizes",
+    "HTML never checked"
+  ],
+  "resources": [
+    "files",
+    "shell"
+  ],
+  "expected_status": "VERIFIED"
+}

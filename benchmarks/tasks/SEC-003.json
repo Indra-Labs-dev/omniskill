@@ -1,0 +1,46 @@
+{
+  "id": "SEC-003",
+  "category": "security",
+  "difficulty": "complex",
+  "kind": "standard",
+  "prompt": "Write a Python script that scans a directory for files likely to contain secrets (private keys, AWS keys, .env) and prints path + type, never the secret value. Include tests with fake fixtures.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Detects private key headers, AWS access key format and .env files",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Output never contains the matched secret value",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Tests pass",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Skips binary files without crashing",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "test output",
+    "sample run output"
+  ],
+  "failure_conditions": [
+    "Prints secret values",
+    "Crashes on binary files"
+  ],
+  "resources": [
+    "files",
+    "shell",
+    "python"
+  ],
+  "expected_status": "VERIFIED"
+}

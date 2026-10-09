@@ -1,0 +1,46 @@
+{
+  "id": "RES-003",
+  "category": "research",
+  "difficulty": "complex",
+  "kind": "verification_heavy",
+  "prompt": "Check each claim in res-003/claims.md and mark it true/false/unsure with a dated source.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Claim 1 marked false (Python 3.8 reached end of life in October 2024), with source",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Claim 2 marked true (RFC 8996, 2021), with source",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Claim 3 marked true, with source",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Each verdict dated",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "rubric"
+  },
+  "expected_evidence": [
+    "sources with dates"
+  ],
+  "failure_conditions": [
+    "Verdicts without sources"
+  ],
+  "resources": [
+    "files",
+    "web"
+  ],
+  "fixtures": [
+    "res-003/claims.md"
+  ],
+  "expected_status": "VERIFIED"
+}

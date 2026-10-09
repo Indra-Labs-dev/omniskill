@@ -1,0 +1,17 @@
+{
+  "task": "Audit nginx.conf of the staging gateway",
+  "mode": "AUDIT",
+  "status": "VERIFIED",
+  "criteria": [
+    {"id": "C1", "description": "Every server block reviewed", "essential": true,
+     "status": "PASS", "evidence": "2/2 server blocks read (lines 1-14, 16-40)"},
+    {"id": "C2", "description": "File not modified", "essential": true,
+     "status": "PASS", "evidence": "sha256 identical before and after the audit"}
+  ],
+  "findings": [
+    {"id": "F1", "title": "Legacy TLS enabled", "severity": "HIGH", "certainty": "confirmed",
+     "location": "nginx.conf:12", "evidence": "ssl_protocols TLSv1 TLSv1.1 TLSv1.2"},
+    {"id": "F2", "title": "Directory listing enabled", "severity": "MEDIUM", "certainty": "confirmed",
+     "location": "nginx.conf:5", "evidence": "autoindex on"}
+  ]
+}

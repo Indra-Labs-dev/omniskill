@@ -1,0 +1,48 @@
+{
+  "id": "DEV-005",
+  "category": "dev",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "dev-005/config_loader.py crashes when the config file has no 'port' and APP_PORT is unset. Fix it so that the default port is 8000, and add tests.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "No crash without port and without APP_PORT; port is 8000",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "APP_PORT still overrides the file value",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "File value used when APP_PORT is unset",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Tests added and passing",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "test output covering the three cases"
+  ],
+  "failure_conditions": [
+    "int(None) TypeError still possible",
+    "Claims fixed without tests"
+  ],
+  "resources": [
+    "files",
+    "shell",
+    "python"
+  ],
+  "fixtures": [
+    "dev-005/config_loader.py"
+  ],
+  "expected_status": "VERIFIED"
+}

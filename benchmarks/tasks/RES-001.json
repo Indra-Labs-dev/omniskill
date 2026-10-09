@@ -1,0 +1,37 @@
+{
+  "id": "RES-001",
+  "category": "research",
+  "difficulty": "simple",
+  "kind": "standard",
+  "prompt": "What is the difference between IDS and IPS? Give one open-source example of each.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Correct distinction (detect/alert vs inline block)",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Valid examples (e.g. Zeek/Suricata in IDS mode; Suricata/Snort inline)",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Under 150 words",
+      "essential": false
+    }
+  ],
+  "evaluation": {
+    "method": "rubric"
+  },
+  "expected_evidence": [
+    "answer"
+  ],
+  "failure_conditions": [
+    "Conflates IDS and IPS"
+  ],
+  "resources": [
+    "none"
+  ],
+  "expected_status": "VERIFIED"
+}

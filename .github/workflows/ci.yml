@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: omniskill   # directory name must equal the skill name
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install shellcheck (optional check)
+        run: sudo apt-get install -y shellcheck || echo "shellcheck unavailable, check will be skipped"
+      - name: Repository checks
+        working-directory: omniskill
+        run: bash scripts/check_repo.sh

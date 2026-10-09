@@ -1,0 +1,18 @@
+{
+  "task": "Add email validation to POST /users",
+  "mode": "PRO",
+  "status": "PARTIAL",
+  "criteria": [
+    {"id": "C1", "description": "Invalid email rejected with 422", "essential": true,
+     "status": "PASS", "evidence": "pytest tests/test_users.py -k invalid_email -> 3 passed"},
+    {"id": "C2", "description": "Existing test suite still passes", "essential": true,
+     "status": "FAIL", "evidence": "pytest -> 1 failed: test_import_legacy_users (legacy fixture has invalid emails)"},
+    {"id": "C3", "description": "README documents the rule", "essential": false,
+     "status": "NOT_VERIFIED", "evidence": "README not updated yet"}
+  ],
+  "actions": [
+    {"description": "Added validator in app/users.py", "state": "observed", "result": "diff reviewed"},
+    {"description": "Ran full test suite", "state": "observed", "result": "142 passed, 1 failed"}
+  ],
+  "limitations": ["Legacy import fixture needs a decision: fix data or exempt the importer"]
+}

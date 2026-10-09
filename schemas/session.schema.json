@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:omniskill:schema:session:v1",
+  "title": "OMNISKILL autonomous checkpoint",
+  "type": "object",
+  "required": ["goal", "updated_at", "steps"],
+  "properties": {
+    "goal": {"type": "string"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "status"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "status": {"enum": ["pending", "in_progress", "done", "failed", "blocked"]},
+          "evidence": {"type": "string"},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "pending_decisions": {"type": "array", "items": {"type": "string"}},
+    "resume_hint": {"type": "string"}
+  }
+}

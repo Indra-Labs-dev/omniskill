@@ -1,0 +1,52 @@
+{
+  "id": "SEC-001",
+  "category": "security",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "Audit sec-001/nginx.conf for security issues. Report findings with severity and the exact line, do not change the file.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Flags: no TLS listener / plain HTTP only",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Flags TLSv1 and TLSv1.1 enabled",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Flags autoindex on and server_tokens on",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Flags /admin exposed without access control",
+      "essential": true
+    },
+    {
+      "id": "C5",
+      "text": "File unchanged",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "hybrid"
+  },
+  "expected_evidence": [
+    "findings with line references",
+    "checksum before/after"
+  ],
+  "failure_conditions": [
+    "Modifies the file",
+    "Invents issues not present"
+  ],
+  "resources": [
+    "files"
+  ],
+  "fixtures": [
+    "sec-001/nginx.conf"
+  ],
+  "expected_status": "VERIFIED"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "DOC-002",
+  "category": "docs",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "Turn doc-002/meeting_notes.txt into minutes with: decisions, action items (owner + due date if known), open questions.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Decision: MFA mandatory for admin accounts from 2026-11-01",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Action items: Awa quote by Friday; Koffi drafts MFA announcement; Lina reviews it; Koffi site B review (blocked on vendor access)",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Open question: legacy VPN owner",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "No invented owners or dates",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "the minutes",
+    "mapping to source lines"
+  ],
+  "failure_conditions": [
+    "Invents a due date",
+    "Misses the open question"
+  ],
+  "resources": [
+    "files"
+  ],
+  "fixtures": [
+    "doc-002/meeting_notes.txt"
+  ],
+  "expected_status": "VERIFIED"
+}

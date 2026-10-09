@@ -1,0 +1,8 @@
+{
+  "task": "Deploy to staging",
+  "mode": "AUTONOMOUS",
+  "status": "BLOCKED",
+  "criteria": [
+    {"id": "C1", "description": "Staging serves the new build", "essential": true, "status": "NOT_VERIFIED", "evidence": "not deployed"}
+  ]
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+dist/
+.omniskill/
+.venv/
+.env
+*.pem
+*.key

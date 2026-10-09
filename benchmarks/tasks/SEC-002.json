@@ -1,0 +1,47 @@
+{
+  "id": "SEC-002",
+  "category": "security",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "Analyse sec-002/auth.log. Is there a brute-force attack, from which IP, and did it succeed?",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Identifies 203.0.113.45 with 40 failed attempts (counted)",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "Notes the subsequent Accepted password for admin from the same IP → likely compromise",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "Does not flag 192.0.2.10 publickey login as malicious",
+      "essential": true
+    },
+    {
+      "id": "C4",
+      "text": "Recommends containment steps",
+      "essential": true
+    }
+  ],
+  "evaluation": {
+    "method": "automated"
+  },
+  "expected_evidence": [
+    "counting command or code with output"
+  ],
+  "failure_conditions": [
+    "Wrong IP",
+    "Misses the successful login"
+  ],
+  "resources": [
+    "files",
+    "shell"
+  ],
+  "fixtures": [
+    "sec-002/auth.log"
+  ],
+  "expected_status": "VERIFIED"
+}

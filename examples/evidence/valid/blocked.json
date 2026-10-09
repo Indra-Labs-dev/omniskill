@@ -1,0 +1,10 @@
+{
+  "task": "Upgrade dependencies including the private auth package",
+  "mode": "AUTONOMOUS",
+  "status": "BLOCKED",
+  "criteria": [
+    {"id": "C1", "description": "All dependencies upgraded", "essential": true,
+     "status": "NOT_VERIFIED", "evidence": "private registry returned 401; no credentials provided"}
+  ],
+  "blockers": ["Access to the company package registry (read token) is required for acme-internal-auth"]
+}

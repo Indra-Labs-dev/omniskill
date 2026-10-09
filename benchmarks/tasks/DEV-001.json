@@ -1,0 +1,45 @@
+{
+  "id": "DEV-001",
+  "category": "dev",
+  "difficulty": "simple",
+  "kind": "verification_heavy",
+  "prompt": "In dev-001/, slugify() fails some tests in test_slugify.py. Fix slugify.py so all tests pass. Do not modify the tests.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "All 4 tests in test_slugify.py pass",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "test_slugify.py is unchanged",
+      "essential": true
+    },
+    {
+      "id": "C3",
+      "text": "No new third-party dependency",
+      "essential": false
+    }
+  ],
+  "evaluation": {
+    "method": "automated",
+    "notes": "Grader runs pytest on the submitted slugify.py against the original tests."
+  },
+  "expected_evidence": [
+    "pytest output showing 4 passed"
+  ],
+  "failure_conditions": [
+    "Tests edited or deleted",
+    "Claims success without running tests"
+  ],
+  "resources": [
+    "files",
+    "shell",
+    "python"
+  ],
+  "fixtures": [
+    "dev-001/slugify.py",
+    "dev-001/test_slugify.py"
+  ],
+  "expected_status": "VERIFIED"
+}

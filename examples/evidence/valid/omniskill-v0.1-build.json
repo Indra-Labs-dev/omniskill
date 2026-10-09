@@ -1,0 +1,25 @@
+{
+  "task": "Build OMNISKILL v0.1 from the master prompt in an empty workspace",
+  "mode": "AUTONOMOUS",
+  "status": "PARTIAL",
+  "criteria": [
+    {"id": "C1", "description": "Core SKILL.md valid against the Agent Skills spec and under the token budget", "essential": true,
+     "status": "PASS", "evidence": "scripts/validate_skill.py . -> VALID, ~1195 tokens, 98 lines"},
+    {"id": "C2", "description": "Four modes, evidence protocol, capability detection, security and efficiency references present and cross-linked", "essential": true,
+     "status": "PASS", "evidence": "validate_skill.py checked every cited path; 0 broken references"},
+    {"id": "C3", "description": "Scripts have tests and pass on the oldest and newest supported Python", "essential": true,
+     "status": "PASS", "evidence": "python -m unittest discover -s tests -> 69 tests OK on Python 3.9 and 3.13"},
+    {"id": "C4", "description": "Repository check script passes and fails when the repo is broken", "essential": true,
+     "status": "PASS", "evidence": "check_repo.sh -> all required checks passed; on a copy with a mode removed and a bad example -> 4 failed, exit 1"},
+    {"id": "C5", "description": "30-task benchmark corpus valid and balanced", "essential": true,
+     "status": "PASS", "evidence": "run_benchmarks.py validate -> VALID, 6 tasks per category, all 5 kinds present; DEV-001 fixture: 2 failed as shipped, 4 passed once fixed"},
+    {"id": "C6", "description": "OMNISKILL improves results versus baseline on at least 3 environments", "essential": true,
+     "status": "NOT_VERIFIED", "evidence": "no model trials run from this workspace; benchmark tooling ready, results/ empty"},
+    {"id": "C7", "description": "CI workflow runs green on GitHub", "essential": false,
+     "status": "NOT_VERIFIED", "evidence": "workflow written; repository not pushed, so never executed on GitHub"}
+  ],
+  "limitations": [
+    "Platform compatibility comes from platforms' documentation (agentskills.io client list, 2026-10-09), not from tests",
+    "guard_command.py and secret detection are pattern-based"
+  ]
+}

@@ -1,0 +1,9 @@
+Weekly sync — 2026-10-06
+Present: Awa (infra), Koffi (security), Lina (product)
+
+- Koffi: firewall rule review done for site A; site B pending, needs vendor access (ETA unknown).
+- Awa: SIEM disk at 87%. Proposes moving 90-day logs to cold storage. Needs budget OK from Lina.
+- Lina: OK for cold storage if cost < 400 EUR/month. Asks Awa for a quote by Friday.
+- Decision: MFA mandatory for all admin accounts from 2026-11-01.
+- Koffi to draft the MFA announcement, Lina to review.
+- Open question: who owns the legacy VPN? Nobody claimed it.

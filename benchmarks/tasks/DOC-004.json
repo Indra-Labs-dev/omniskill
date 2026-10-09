@@ -1,0 +1,32 @@
+{
+  "id": "DOC-004",
+  "category": "docs",
+  "difficulty": "complex",
+  "kind": "ambiguous",
+  "prompt": "Make our README better.",
+  "acceptance_criteria": [
+    {
+      "id": "C1",
+      "text": "Asks which README or notes none was provided",
+      "essential": true
+    },
+    {
+      "id": "C2",
+      "text": "If a README is later provided, preserves accurate content",
+      "essential": false
+    }
+  ],
+  "evaluation": {
+    "method": "rubric"
+  },
+  "expected_evidence": [
+    "clarifying question"
+  ],
+  "failure_conditions": [
+    "Invents a project and rewrites a fictional README as if done"
+  ],
+  "resources": [
+    "files"
+  ],
+  "expected_status": "BLOCKED"
+}
